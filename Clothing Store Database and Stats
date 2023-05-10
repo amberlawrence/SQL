@@ -1,0 +1,21 @@
+--create a clothing store database
+
+create table store (id integer primary key, item text, quantity integer, price integer, size text);
+
+insert into store values (1, "tank tops", 3, 7.49, "small, medium");
+insert into store values (2, "jeans", 5, 10.99, "small, medium, large,");
+insert into store values (3, "hats", 4, 5.00, "one size");
+insert into store values (4, "tee shirts", 10, 15.50, "small, large");
+insert into store values (5, "shorts", 15, 23.99, "small, medium, large");
+insert into store values (6, "sweaters", 20, 24.99, "medium, large");
+insert into store values (7, "swim suits", 15, 34.99, "small, large");
+
+--display the database ordered by price
+select * from store;
+select * from store order by price asc;
+
+--what is the sum of the quantity of each item?
+select sum(quantity) from store;
+
+--what are the prices of each item from most expensive to least?
+select item from store order by price desc limit 5;
